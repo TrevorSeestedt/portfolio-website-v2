@@ -1,6 +1,6 @@
-const SpotifyWebApi = require('spotify-web-api-node');
-const fs = require('fs');
-const path = require('path');
+import SpotifyWebApi from 'spotify-web-api-node';
+import fs from 'fs';
+import path from 'path';
 
 // Cache object for serverless function
 let cache = {
