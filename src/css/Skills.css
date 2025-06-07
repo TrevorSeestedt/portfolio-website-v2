@@ -1,0 +1,251 @@
+.skills-section {
+  width: 100%;
+  margin-top: 2rem;
+}
+
+.skills-title {
+  font-family: 'Geist', sans-serif;
+  font-size: 1.75rem;
+  font-weight: 400;
+  line-height: 1.2;
+  padding-bottom: 1rem;
+  text-align: left;
+  color: #333;
+}
+
+.skills-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.skill-card {
+  width: 100%;
+  height: 300px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  padding: 1.5rem;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.skill-card-front {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.skill-card-back {
+  position: absolute;
+  top: 1.5rem;
+  left: 1.5rem;
+  right: 1.5rem;
+  bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  padding: 0;
+}
+
+.skill-header {
+  margin-bottom: 1rem;
+}
+
+.skill-header h3 {
+  font-family: 'Geist', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 300;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.skill-description {
+  font-family: 'Geist', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 200;
+  color: #444;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: auto;
+}
+
+.tech-tag-container {
+  position: relative;
+}
+
+.tech-tag {
+  font-family: 'Geist', sans-serif;
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 300;
+  color: white;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  opacity: .8;
+}
+
+.tech-tag:hover {
+  transform: translateY(-1px);
+  opacity: 1;
+}
+
+.tech-tooltip {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #333;
+  color: #fff;
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+  font-family: 'Geist', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 300;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 10;
+  pointer-events: none;
+  margin-bottom: 0.5rem;
+}
+
+.tech-tag-container:hover .tech-tooltip {
+  opacity: 1;
+  visibility: visible;
+}
+
+.skill-card-back h4 {
+  font-family: 'Geist', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 300;
+  margin-bottom: 0.5rem;
+  color: #333;
+  text-align: left; 
+}
+
+.skill-card-back p {
+  font-family: 'Geist', sans-serif;
+  font-size: .95rem;
+  font-weight: 200;
+  color: #444;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+.back-to-front {
+  font-family: 'Geist', sans-serif;
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  font-size: 0.8rem;
+  font-weight: 300;
+  color: #444;
+  opacity: 0.7;
+}
+
+/* Dark mode styles */
+body.dark-mode .skills-title {
+  color: #fff;
+}
+
+body.dark-mode .skill-card {
+  background-color: #121212;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+body.dark-mode .skill-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .skill-card-front,
+body.dark-mode .skill-card-back {
+  background-color: #121212;
+}
+
+body.dark-mode .skill-header h3,
+body.dark-mode .skill-card-back h4 {
+  color: #fff;
+}
+
+body.dark-mode .skill-description,
+body.dark-mode .skill-card-back p {
+  color: #e0e0e0;
+}
+
+body.dark-mode .back-to-front {
+  color: #e0e0e0;
+}
+
+/* Responsive design */
+@media (max-width: 900px) {
+  .skills-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .skills-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .skills-container {
+    gap: 1rem;
+    max-width: 100%;
+    margin: 0;
+    padding: 0 1rem;
+  }
+  
+  .skill-card {
+    height: 220px;
+  }
+  
+  .skill-card-front,
+  .skill-card-back {
+    padding: 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .skills-container {
+    padding: 0 0.5rem;
+  }
+  
+  .skill-card {
+    height: 200px;
+  }
+  
+  .skill-card-front,
+  .skill-card-back {
+    padding: 1rem;
+  }
+  
+  .skills-title {
+    font-size: 1.5rem;
+  }
+  
+  .skill-header h3 {
+    font-size: 1.25rem;
+  }
+  
+  .skill-card-back h4 {
+    font-size: 1.2rem;
+  }
+} 
