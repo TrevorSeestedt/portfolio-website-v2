@@ -3,8 +3,10 @@
  * Uses environment variables injected during the build process
  */
 const config = {
-  // API base URL from environment variable
-  apiUrl: import.meta.env.VITE_API_URL || 'http://localhost:5001',
+  // API base URL - use API subdomain in production
+  apiUrl: import.meta.env.VITE_ENV === 'production' 
+    ? 'https://api.trevorseestedt.me' 
+    : (import.meta.env.VITE_API_URL || 'http://localhost:5001'),
   
   // Environment name
   environment: import.meta.env.VITE_ENV || 'development',
@@ -15,7 +17,7 @@ const config = {
   // API endpoints
   endpoints: {
     test: '/api/test',
-    login: import.meta.env.VITE_ENV === 'production' ? '/api/login' : '/login',
+    login: '/api/login',
     albums: '/api/albums',
     recentlyPlayed: '/api/recently-played',
     recentTracks: '/api/recent-tracks',

@@ -419,20 +419,46 @@ function MusicLibrary() {
   useEffect(() => {
     const getAccessToken = async () => {
       try {
+        console.log('Fetching access token from:', `${config.apiUrl}${config.endpoints.token}`);
         const response = await fetch(`${config.apiUrl}${config.endpoints.token}`);
+        
         if (response.ok) {
           const data = await response.json();
+          console.log('Received access token:', data.accessToken ? 'Token received (hidden)' : 'No token in response');
           setAccessToken(data.accessToken);
         } else {
+          const errorText = await response.text();
+          console.warn('Failed to get access token. Status:', response.status, 'Response:', errorText);
           setNeedsLogin(true);
-          console.warn('Failed to get access token. User may need to log in.');
         }
       } catch (error) {
         console.error('Error fetching access token:', error);
+        setNeedsLogin(true);
       }
     };
     
-    getAccessToken();
+    // Check if we have an auth=success in the URL
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('auth') === 'success') {
+      // If we have a refresh token in the URL, show it to the user once
+      const refreshToken = params.get('refreshToken');
+      if (refreshToken) {
+        console.log('IMPORTANT: Save this refresh token in your Vercel environment variables:');
+        console.log('Name: OWNER_REFRESH_TOKEN');
+        console.log(`Value: ${refreshToken}`);
+        
+        // Add a small alert for the user
+        alert('Authentication successful! Check console for your refresh token. Save it in your Vercel environment variables.');
+        
+        // Remove the refresh token from the URL for security
+        const cleanUrl = window.location.pathname + '?auth=success';
+        window.history.replaceState({}, document.title, cleanUrl);
+      }
+      
+      getAccessToken();
+    } else {
+      getAccessToken();
+    }
   }, []);
 
   useEffect(() => {
@@ -440,11 +466,17 @@ function MusicLibrary() {
       setLoadingAlbums(true);
       setErrorAlbums(null);
       try {
+        console.log('Fetching albums from:', `${config.apiUrl}${config.endpoints.albums}`);
         const response = await fetch(`${config.apiUrl}${config.endpoints.albums}`);
+        
         if (!response.ok) {
+          const errorText = await response.text();
+          console.error('Album fetch error:', response.status, errorText);
           throw new Error(`HTTP error! status: ${response.status}`);
         }
+        
         const data = await response.json();
+        console.log('Received albums data:', data ? `${data.length} albums` : 'No albums data');
         setAlbums(data);
       } catch (error) {
         console.error("Error fetching albums:", error);
@@ -459,12 +491,15 @@ function MusicLibrary() {
         setErrorRecentTracks(null);
         
         try {
+            console.log('Fetching recent tracks from:', `${config.apiUrl}${config.endpoints.recentTracks}?limit=5`);
             // Fetch tracks from backend (which now uses your stored token)
             const response = await fetch(`${config.apiUrl}${config.endpoints.recentTracks}?limit=5`);
             
             if (!response.ok) {
                 // Handle error based on status code
                 const errorText = await response.text();
+                console.error('Recent tracks fetch error:', response.status, errorText);
+                
                 let errorMessage;
                 try {
                     const errorData = JSON.parse(errorText);
@@ -476,15 +511,19 @@ function MusicLibrary() {
             }
             
             const data = await response.json();
+            console.log('Received recent tracks data:', data);
+            
             // Make sure data is an array of tracks
             const trackArray = Array.isArray(data) ? data : [data].filter(Boolean);
             
             if (trackArray.length > 0) {
+                console.log('Setting most recent track:', trackArray[0].name);
                 // Set the first track as the most recent one for Now Playing
                 setMostRecentTrack(trackArray[0]);
                 // Keep all tracks for the list display
                 setRecentTracks(trackArray);
             } else {
+                console.log('No recent tracks found in response');
                 setMostRecentTrack(null);
                 setRecentTracks([]);
             }

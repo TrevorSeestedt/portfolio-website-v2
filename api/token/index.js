@@ -5,9 +5,23 @@ let userAccessToken = null;
 let tokenExpiresAt = null;
 
 export default async function handler(req, res) {
-  // Enable CORS
+  // Enable CORS for all origins, especially for your custom domain
+  const allowedOrigins = [
+    'https://www.trevorseestedt.me',
+    'https://trevorseestedt.me',
+    'https://api.trevorseestedt.me',
+    'http://localhost:5173'
+  ];
+  
+  const origin = req.headers.origin;
+  if (allowedOrigins.includes(origin)) {
+    res.setHeader('Access-Control-Allow-Origin', origin);
+  } else {
+    // Allow all origins as fallback
+    res.setHeader('Access-Control-Allow-Origin', '*');
+  }
+  
   res.setHeader('Access-Control-Allow-Credentials', true);
-  res.setHeader('Access-Control-Allow-Origin', req.headers.origin || '*');
   res.setHeader('Access-Control-Allow-Methods', 'GET,OPTIONS,PATCH,DELETE,POST,PUT');
   res.setHeader('Access-Control-Allow-Headers', 'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version');
 
