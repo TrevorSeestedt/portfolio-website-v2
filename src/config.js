@@ -15,7 +15,7 @@ const config = {
   // API endpoints
   endpoints: {
     test: '/api/test',
-    login: '/login',
+    login: import.meta.env.VITE_ENV === 'production' ? '/api/login' : '/login',
     albums: '/api/albums',
     recentlyPlayed: '/api/recently-played',
     recentTracks: '/api/recent-tracks',

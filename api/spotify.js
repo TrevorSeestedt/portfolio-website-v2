@@ -105,6 +105,24 @@ export default async function handler(req, res) {
         res.json(cache.albums);
         break;
 
+      case 'token':
+        // Check if we have a valid user token
+        const isTokenValid = await ensureValidUserToken();
+        
+        if (!isTokenValid) {
+          return res.status(401).json({ 
+            message: 'No valid token available.', 
+            needsLogin: true 
+          });
+        }
+        
+        // Return the access token to the client
+        res.json({ 
+          accessToken: userAccessToken,
+          expiresAt: tokenExpiresAt
+        });
+        break;
+
       case 'recently-played':
         if (cache.recentlyPlayed && cache.rpLastFetched && (Date.now() - cache.rpLastFetched) < cache.rpCacheDurationMs) {
           return res.json(cache.recentlyPlayed);

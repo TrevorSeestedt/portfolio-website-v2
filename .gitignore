@@ -53,3 +53,4 @@ backend/owner_token.json
 backend/*.json
 *.token
 *_token.json
+.vercel

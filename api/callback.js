@@ -31,18 +31,16 @@ export default async function handler(req, res) {
 
     console.log('Successfully retrieved user tokens.');
     
-    // You might want to store these tokens securely or redirect to your app
-    // For now, we'll just show a success message
-    res.send(`
-      <h1>Spotify Authorization Successful!</h1>
-      <p>Your refresh token has been obtained. You can now close this window.</p>
-      <p><strong>Refresh Token:</strong> ${refreshToken}</p>
-      <p><em>Save this refresh token as your OWNER_REFRESH_TOKEN environment variable.</em></p>
-      <script>
-        // You could also redirect back to your main app
-        // window.location.href = '/';
-      </script>
-    `);
+    // Store the tokens in environment variables
+    process.env.OWNER_REFRESH_TOKEN = refreshToken;
+    
+    // Determine frontend URL based on environment
+    const frontendUrl = process.env.VITE_ENV === 'production' 
+      ? 'https://www.trevorseestedt.me' 
+      : 'http://localhost:5173';
+    
+    // Redirect back to the frontend with auth=success
+    return res.redirect(`${frontendUrl}/music?auth=success`);
     
   } catch (authError) {
     console.error('Error exchanging code for tokens:', authError);
