@@ -13,25 +13,22 @@
       }
     }
   ],
-  "routes": [
+  "rewrites": [
     {
-      "src": "/login",
-      "dest": "/api/login"
+      "source": "/api/(.*)",
+      "destination": "/api/$1"
     },
     {
-      "src": "/callback",
-      "dest": "/api/callback"
+      "source": "/login",
+      "destination": "/api/login"
     },
     {
-      "src": "/api/(.*)",
-      "dest": "/api/$1"
+      "source": "/callback",
+      "destination": "/api/callback"
     },
     {
-      "handle": "filesystem"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/index.html"
+      "source": "/(.*)",
+      "destination": "/index.html"
     }
   ]
 } 
