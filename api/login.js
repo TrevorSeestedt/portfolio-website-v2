@@ -21,12 +21,5 @@ export default async function handler(req, res) {
 
   console.log('Redirecting user to Spotify for authorization...');
   const authorizeURL = spotifyApi.createAuthorizeURL(scopes, 'state-string-optional');
-  
-  // Set CORS headers
-  res.setHeader('Access-Control-Allow-Origin', 'https://www.trevorseestedt.me');
-  res.setHeader('Access-Control-Allow-Methods', 'GET');
-  res.setHeader('Access-Control-Allow-Credentials', 'true');
-  
-  // Redirect to Spotify
   res.redirect(authorizeURL);
 } 
