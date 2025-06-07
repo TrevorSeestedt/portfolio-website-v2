@@ -2,12 +2,26 @@
   "functions": {
     "api/spotify.js": {
       "runtime": "@vercel/node"
+    },
+    "api/login.js": {
+      "runtime": "@vercel/node"
+    },
+    "api/callback.js": {
+      "runtime": "@vercel/node"
     }
   },
   "rewrites": [
     {
       "source": "/api/(.*)",
       "destination": "/api/$1"
+    },
+    {
+      "source": "/login",
+      "destination": "/api/login"
+    },
+    {
+      "source": "/callback",
+      "destination": "/api/callback"
     }
   ]
 } 
