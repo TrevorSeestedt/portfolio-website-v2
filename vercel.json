@@ -19,6 +19,14 @@
       "dest": "/api/$1"
     },
     {
+      "src": "/login",
+      "dest": "/api/login"
+    },
+    {
+      "src": "/callback",
+      "dest": "/api/callback"
+    },
+    {
       "handle": "filesystem"
     },
     {
