@@ -17,6 +17,7 @@ const LoadingFallback = () => (
 const Home = lazy(() => import('./pages/Home'));
 const About = lazy(() => import('./pages/About'));
 const Projects = lazy(() => import('./pages/Projects'));
+const Login = lazy(() => import('./pages/Login'));
 
 // Create Context for global state management
 export const AppContext = createContext();
@@ -46,7 +47,7 @@ function App() {
                 <Route path="/" element={<Home />} />
                 <Route path="/about" element={<About />} />
                 <Route path="/projects" element={<Projects />} />
-                <Route path="/login" element={<div>Redirecting to Spotify...</div>} />
+                <Route path="/login" element={<Login />} />
               </Routes>
             </Suspense>
           </main>
