@@ -15,6 +15,14 @@
   ],
   "routes": [
     {
+      "src": "/login",
+      "dest": "/api/login"
+    },
+    {
+      "src": "/callback",
+      "dest": "/api/callback"
+    },
+    {
       "src": "/api/(.*)",
       "dest": "/api/$1"
     },
