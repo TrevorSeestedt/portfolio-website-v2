@@ -1,5 +1,5 @@
 import React, { lazy, Suspense, createContext, useState } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import './css/global.css';
@@ -35,6 +35,12 @@ function App() {
     // Add other global state as needed
   };
 
+  // Handle Spotify auth routes
+  const handleSpotifyAuth = (path) => {
+    window.location.href = `/api${path}`;
+    return null;
+  };
+
   return (
     <AppContext.Provider value={contextValue}>
       <Router>
@@ -46,6 +52,8 @@ function App() {
                 <Route path="/" element={<Home />} />
                 <Route path="/about" element={<About />} />
                 <Route path="/projects" element={<Projects />} />
+                <Route path="/login" element={<Navigate to="/api/login" replace />} />
+                <Route path="/callback" element={<Navigate to="/api/callback" replace />} />
               </Routes>
             </Suspense>
           </main>
