@@ -2,8 +2,8 @@ import { useEffect } from 'react';
 
 function Login() {
   useEffect(() => {
-    // Redirect to the API endpoint
-    window.location.href = '/api/login';
+    // Redirect to the login endpoint
+    window.location.href = '/login';
   }, []);
 
   return (
