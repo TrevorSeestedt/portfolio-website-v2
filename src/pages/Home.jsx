@@ -126,7 +126,7 @@ const Home = () => {
             className="welcome-blurb"
             variants={blurbVariants}
           >
-            Hello, my name's Trevor Seestedt. I'm a recent Computer Science graduate from the University of South Carolina. My passion for learning and programming has led me to begin exploring opportunities in software engineering and data analysis.
+            Hello, my name is Trevor Seestedt. I'm a recent Computer Science graduate from the University of South Carolina, having completed my degree in 2025. My passion for learning and programming has led me to explore opportunities in software engineering and data analysis.
           </motion.div>
         </motion.div>
         

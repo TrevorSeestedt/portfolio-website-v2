@@ -17,7 +17,7 @@ const Skills = () => {
           name: 'HTML & CSS', 
           color: '#E34F26', 
           year: '2021',
-          description: 'Began in University course called "Computing in the Modern World", refined through building websites and web applications.'
+          description: 'Began in a USC course called "Computing in the Modern World", refined through building websites and web applications.'
         },
         { 
           name: 'JavaScript', 
@@ -29,7 +29,7 @@ const Skills = () => {
           name: 'React', 
           color: '#61DAFB', 
           year: '2025',
-          description: 'Learned through tutorials, built a few projects, and now the website you are currently on.'
+          description: 'Learned through following tutorials and building projects, such as this website.'
         }
       ]
     },
@@ -42,25 +42,25 @@ const Skills = () => {
           name: 'Python', 
           color: '#306998', 
           year: '2020',
-          description: 'First learned Python early on in AP Computer Science to now using it in a majority of projects.'
+          description: 'First learned Python early on in AP Computer Science and now use it in a majority of projects.'
         },
         { 
           name: 'Java', 
           color: '#F89820', 
           year: '2021',
-          description: 'Began learning the fundamentals in university course "Algorithmic Design I & II", to which I built a variety of smaller projects.'
+          description: 'Began learning the fundamentals in USC course "Algorithmic Design I & II" and has led me to build a diverse array of projects.'
         },
         { 
           name: 'C++', 
           color: '#00599C', 
           year: '2022',
-          description: 'Learned fundamentals in University course called "Advanced Programming Techniques".'
+          description: 'Learned fundamentals from Udemy and in USC course called "Advanced Programming Techniques".'
         },
         { 
           name: 'Django', 
           color: '#092E20', 
           year: '2024',
-          description: 'Became proficient in framework primarily through my University "Capstone Project".'
+          description: 'Became proficient in framework primarily through my Capstone Project at USC.'
         }
       ]
     },
@@ -79,13 +79,13 @@ const Skills = () => {
           name: 'MySQL', 
           color: '#4479A1', 
           year: '2024',
-          description: 'Learned fundamentals through University called "Database System Design", and hands-on experience through database design projects.'
+          description: 'Learned fundamentals through USC course called "Database System Design", and gained experience through database design projects.'
         },
         { 
           name: 'Kotlin', 
           color: '#7F52FF', 
           year: '2025',
-          description: 'Learned the fundamentals through Android Studio and University course called "Mobile Application Development".'
+          description: 'Learned the fundamentals through Android Studio and USC course called "Mobile Application Development".'
         }
       ]
     }

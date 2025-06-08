@@ -7,7 +7,7 @@ const CareerTimeline = () => {
       company: "University of South Carolina, Columbia",
       years: "2021 - 2025",
       title: "B.S. in Computer Science",
-      experience: ["Received degree with Cum Laude honors in May 2025"],
+      experience: ["Received degree with Cum Laude honors in May 2025."],
       color: "#73000A",
       borderColor: "#8b000c",
       darkBorderColor: "#5a0008"
@@ -16,7 +16,7 @@ const CareerTimeline = () => {
       company: "FINTRX",
       years: "2024 - 2024",
       title: "Data Operations Intern",
-      experience: ["Gathered and performed operations on large datasets"],
+      experience: ["Gathered and performed operations on large datasets."],
       color: "#224edf",
       borderColor: "#2b5fe3",
       darkBorderColor: "#1b3eb3"
@@ -25,7 +25,7 @@ const CareerTimeline = () => {
       company: "PCS",
       years: "2023 - 2024",
       title: "IT Technician Intern",
-      experience: ["Resolved lots of problems for people over the phone"],
+      experience: ["Resolved tons of problems for people over the phone."],
       color: "#fea30b",
       borderColor: "#ffb52e",
       darkBorderColor: "#cc8209"
