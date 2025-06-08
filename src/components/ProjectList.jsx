@@ -65,10 +65,10 @@ const ProjectList = () => {
     },
     {
       id: 2,
-      title: 'Website v2.0',
+      title: 'Portfolio v2.0',
       languages: ['React', 'Node.js', 'JavaScript', 'HTML/CSS'],
       description: 'The website you are currently on!',
-      repoUrl: 'https://github.com/TrevorSeestedt/portfolio-website',
+      repoUrl: 'https://github.com/TrevorSeestedt/portfolio-website-v2',
     },
     {
       id: 3,
@@ -89,7 +89,7 @@ const ProjectList = () => {
       title: 'Custom LMS',
       languages: ['Java'],
       description: 'Learning management system developed for my Software Engineering course.',
-      repoUrl: 'https://github.com/TrevorSeestedt/lms-project',
+      repoUrl: 'https://github.com/TrevorSeestedt/Learning-Management-System',
     },
   ], []);
 
