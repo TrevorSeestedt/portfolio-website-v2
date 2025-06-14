@@ -10,7 +10,7 @@ const Skills = () => {
   const skills = useMemo(() => [
     {
       id: 'frontend',
-      name: 'Frontend',
+      name: 'Front-End',
       description: 'Web development fundamentals and modern frameworks.',
       technologies: [
         { 
@@ -35,7 +35,7 @@ const Skills = () => {
     },
     {
       id: 'backend',
-      name: 'Backend',
+      name: 'Back-End',
       description: 'Server-side programming and application development.',
       technologies: [
         { 
