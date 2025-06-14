@@ -227,24 +227,34 @@ body.dark-mode .back-to-front {
   .skills-container {
     padding: 0 0.5rem;
   }
-  
+
+  /* Give every card enough vertical space so margin-auto can push tech-tags reliably */
   .skill-card {
-    height: auto;
-    min-height: 200px;
-    padding: 1.5rem;
-    position: relative;
-    padding-bottom: 4rem;
+    height: 260px;            /* uniform fixed height */
+    padding: 1.25rem;         /* original padding */
+    position: static;         /* reset from relative */
+    padding-bottom: 1.25rem;  /* reset extra bottom space */
   }
-  
+
+  /* restore front/back padding */
   .skill-card-front,
   .skill-card-back {
-    padding: 0rem;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
   }
-  
+
+  /* tech-stack back to normal flow with margin-auto */
+  .tech-stack {
+    position: static;
+    margin-top: auto;
+  }
+
+  /* keep header smaller */
   .skills-title {
     font-size: 1.25rem;
   }
-  
+
   .skill-header h3 {
     font-size: 1.25rem;
   }
@@ -263,14 +273,5 @@ body.dark-mode .back-to-front {
     bottom: -0.5rem;
     right: 0.5rem;
     font-size: 0.75rem;
-  }
-
-  /* Position tech stack at bottom of card for mobile only */
-  .tech-stack {
-    position: absolute;
-    bottom: 1rem;
-    left: 1.5rem;
-    right: 1.5rem;
-    margin-top: 0;
   }
 } 
