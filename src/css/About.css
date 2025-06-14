@@ -100,9 +100,14 @@ body.dark-mode .photo-container:hover {
 
 /* Responsive design */
 @media (max-width: 768px) {
+  .about-container {
+    padding: 0 1rem;
+  }
+
   .photo-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
+    margin-top: 1rem;
   }
   
   .about-container h1 {
@@ -115,11 +120,32 @@ body.dark-mode .photo-container:hover {
 }
 
 @media (max-width: 480px) {
-  .photo-grid {
-    grid-template-columns: 1fr;
+  .about-container {
+    padding: 0 0.75rem;
   }
-  
+
+  /* Keep page title 1.5rem to match Home */
   .about-container h1 {
     font-size: 1.5rem;
+  }
+
+  .about-blurb {
+    font-size: 0.95rem;
+  }
+
+  /* 2-column collage for better balance */
+  .photo-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+
+  .photo-container {
+    border-radius: 8px;
+  }
+
+  /* Show only first two photos on small screens */
+  .photo-grid .photo-container:nth-child(3),
+  .photo-grid .photo-container:nth-child(4) {
+    display: none;
   }
 }

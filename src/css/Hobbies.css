@@ -79,4 +79,26 @@ body.dark-mode .hobby-description {
   .hobby-card {
     padding: 1.25rem;
   }
+}
+
+@media (max-width: 480px) {
+  .hobbies-title {
+    font-size: 1.25rem;
+  }
+
+  .hobbies-grid {
+    gap: 0.75rem;
+  }
+
+  .hobby-card {
+    padding: 1rem;
+  }
+
+  .hobby-name {
+    font-size: 1.1rem;
+  }
+
+  .hobby-description {
+    font-size: 0.85rem;
+  }
 } 
