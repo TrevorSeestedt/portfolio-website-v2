@@ -159,4 +159,44 @@ body.dark-mode .theme-toggle:hover {
 
 body.dark-mode .theme-icon {
   filter: brightness(0) invert(1);
+}
+
+/* --------------------------------------------------
+   Mobile layout tweaks ( ≤ 640 px )
+   -------------------------------------------------- */
+@media (max-width: 640px) {
+  /* keep container centered but allow absolute toggle */
+  .nav-container {
+    justify-content: center;
+    padding: 0 0.75rem; /* small side-padding */
+  }
+
+  /* allow links block to sit in normal flow */
+  .nav-center {
+    position: static;
+    transform: none;
+  }
+
+  /* theme toggle floats on the far right */
+  .nav-right {
+    position: absolute;
+    right: 0.75rem;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  /* tighten spacing & font */
+  .nav-links {
+    gap: 1.25rem;
+  }
+
+  .nav-links li a {
+    padding: 0.55rem 0.8rem;
+    font-size: 0.9rem;
+  }
+
+  /* pull underline closer so it isn't clipped */
+  .nav-links li a::after {
+    bottom: 0.25rem;
+  }
 } 

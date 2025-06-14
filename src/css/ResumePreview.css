@@ -222,4 +222,10 @@ body.dark-mode .download-button:hover {
   .download-button {
     align-self: center;
   }
+}
+
+@media (max-width: 480px) {
+  .resume-title {
+    font-size: 1.25rem;
+  }
 } 

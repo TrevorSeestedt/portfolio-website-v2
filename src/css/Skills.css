@@ -229,16 +229,18 @@ body.dark-mode .back-to-front {
   }
   
   .skill-card {
-    height: 200px;
+    height: auto;
+    min-height: 200px;
+    padding: 1.5rem;
   }
   
   .skill-card-front,
   .skill-card-back {
-    padding: 1rem;
+    padding: 0rem;
   }
   
   .skills-title {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
   }
   
   .skill-header h3 {
@@ -247,5 +249,17 @@ body.dark-mode .back-to-front {
   
   .skill-card-back h4 {
     font-size: 1.2rem;
+  }
+  
+  .tech-tag {
+    font-size: 0.75rem;
+    padding: 0.4rem 0.75rem;
+  }
+  
+  /* Position and size of the "back-to-front" hint */
+  .back-to-front {
+    bottom: -0.5rem;
+    right: 0.5rem;
+    font-size: 0.75rem;
   }
 } 
