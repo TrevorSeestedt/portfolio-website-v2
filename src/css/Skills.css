@@ -230,7 +230,6 @@ body.dark-mode .back-to-front {
 
   /* Give every card enough vertical space so margin-auto can push tech-tags reliably */
   .skill-card {
-    height: 260px;            /* uniform fixed height */
     padding: 1.25rem;         /* original padding */
     position: static;         /* reset from relative */
     padding-bottom: 1.25rem;  /* reset extra bottom space */
