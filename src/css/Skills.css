@@ -263,9 +263,7 @@ body.dark-mode .back-to-front {
     font-size: 0.75rem;
   }
 
-  /* Disable hover translate shifts on touch devices */
-  .tech-tag:hover,
-  .skill-card:hover {
-    transform: none;
+  .tech-stack { 
+    margin-top: auto;
   }
 } 

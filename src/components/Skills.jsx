@@ -1,10 +1,19 @@
-import React, { useState, useMemo, useCallback } from 'react';
+import React, { useState, useMemo, useCallback, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import '../css/Skills.css';
 
 const Skills = () => {
   const [flippedCard, setFlippedCard] = useState(null);
   const [selectedTech, setSelectedTech] = useState(null);
+
+  // Detect mobile width once and on resize
+  const [isMobile, setIsMobile] = useState(() => window.innerWidth <= 600);
+
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth <= 600);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   // Memoize skills data to prevent re-creation on each render
   const skills = useMemo(() => [
@@ -165,7 +174,7 @@ const Skills = () => {
         variants={cardVariants}
         onClick={() => handleCardClick(skill.id)}
         style={{ cursor: flippedCard === skill.id ? 'pointer' : 'default' }}
-        whileHover={{ y: -3 }}
+        whileHover={isMobile ? undefined : { y: -3 }}
         transition={{ duration: 0.2 }}
       >
         <AnimatePresence mode="wait">
@@ -223,7 +232,7 @@ const Skills = () => {
         </AnimatePresence>
       </motion.div>
     ));
-  }, [skills, flippedCard, selectedTech, handleCardClick, handleTechClick, cardVariants, contentVariants, backContentVariants]);
+  }, [skills, flippedCard, selectedTech, handleCardClick, handleTechClick, cardVariants, contentVariants, backContentVariants, isMobile]);
 
   return (
     <motion.div 
