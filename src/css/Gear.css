@@ -199,4 +199,19 @@ body.dark-mode .gear-details p {
   .gear-details p {
     font-size: 0.85rem;
   }
+
+  /* Typography consistency with other mobile sections */
+  .gear-title {
+    font-size: 1.25rem;
+  }
+
+  .gear-blurb {
+    font-size: 0.95rem;
+  }
+
+  .gear-category h3 {
+    font-size: 1.15rem;
+  }
+
+  /* Keep item paragraph size consistent (already 0.85rem) */
 } 

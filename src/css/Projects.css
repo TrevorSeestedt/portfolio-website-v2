@@ -202,13 +202,91 @@ body.dark-mode .project-info p {
 
 /* Responsive design */
 @media (max-width: 768px) {
+  .projects-container {
+    padding: 0 1rem;
+  }
+
+  .projects h1 {
+    font-size: 1.75rem;
+  }
+
+  .projects-blurb {
+    font-size: 1rem;
+  }
+
   .projects-grid {
-    grid-template-columns: repeat(2, 1fr); /* On medium screens, show 2 projects per row */
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+
+  .project-info {
+    padding: 1.25rem;
+  }
+
+  .project-info h3 {
+    font-size: 1.15rem;
+  }
+
+  .project-info p {
+    font-size: 0.9rem;
+  }
+
+  .language-bubble {
+    font-size: 0.8rem;
   }
 }
 
 @media (max-width: 480px) {
+  .projects-container {
+    padding: 0 0.75rem;
+  }
+
+  .projects h1 {
+    font-size: 1.5rem;
+  }
+
+  .projects-blurb {
+    font-size: 0.95rem;
+  }
+
   .projects-grid {
-    grid-template-columns: 1fr; /* On small screens, show 1 project per row */
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .project-info {
+    padding: 1rem;
+  }
+
+  .project-info h3 {
+    font-size: 1rem;
+  }
+
+  .project-info p {
+    font-size: 0.85rem;
+  }
+
+  .language-bubble {
+    font-size: 0.75rem;
+  }
+
+  /* Compact card visuals on mobile */
+  .project-card {
+    border-radius: 0.75rem;
+  }
+
+  /* Remove hover lift to avoid jump on touch devices */
+  .project-card:hover {
+    transform: none;
+  }
+
+  /* Image height tweak if used in future */
+  .project-image {
+    height: 160px;
+  }
+
+  /* Slightly tighter bubble gap */
+  .language-bubbles {
+    gap: 0.5rem;
   }
 } 
