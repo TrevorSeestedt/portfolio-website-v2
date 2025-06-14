@@ -232,6 +232,8 @@ body.dark-mode .back-to-front {
     height: auto;
     min-height: 200px;
     padding: 1.5rem;
+    position: relative;
+    padding-bottom: 4rem;
   }
   
   .skill-card-front,
@@ -263,7 +265,12 @@ body.dark-mode .back-to-front {
     font-size: 0.75rem;
   }
 
-  .tech-stack { 
-    margin-top: auto;
+  /* Position tech stack at bottom of card for mobile only */
+  .tech-stack {
+    position: absolute;
+    bottom: 1rem;
+    left: 1.5rem;
+    right: 1.5rem;
+    margin-top: 0;
   }
 } 
